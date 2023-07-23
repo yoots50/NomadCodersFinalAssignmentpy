@@ -17,11 +17,11 @@ def extract_rmt_jobs(term):
       anchor = anchors[1]
       href = anchor["href"]
       if company:
-        company = company.string.strip()
+        company = company.string.strip().replace(',', ' ')
       if position:
-        position = position.string.strip()
+        position = position.string.strip().replace(',', ' ')
       if location:
-        location = location.string.strip()
+        location = location.string.strip().replace(',', ' ')
       if company and position and location:
         job = {
             'company': company,
